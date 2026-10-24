@@ -1,0 +1,51 @@
+<!-- c:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Server\Views\SettingsDialog.xaml -->
+<Window x:Class="ExamMonitor.Server.Views.SettingsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Settings"
+        Width="400"
+        Height="310"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="NoResize"
+        Background="#FFFFFF"
+        Foreground="#1F2937"
+        FontFamily="Segoe UI">
+    <Grid Margin="22">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0"
+                   Text="Network &amp; Display Settings"
+                   FontSize="15"
+                   FontWeight="SemiBold"
+                   Foreground="#111827"
+                   Margin="0,0,0,16" />
+
+        <StackPanel Grid.Row="1">
+            <TextBlock Text="Classroom / Lab Name" FontSize="12" Foreground="#4B5563" Margin="0,0,0,4" />
+            <TextBox Text="{Binding RoomName, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource RdTextBox}"
+                     Margin="0,0,0,12" />
+
+            <TextBlock Text="Grid Columns (1 - 8)" FontSize="12" Foreground="#4B5563" Margin="0,0,0,4" />
+            <TextBox Text="{Binding GridColumns, UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource RdTextBox}"
+                     Margin="0,0,0,12" />
+
+            <TextBlock Text="UDP Discovery Port" FontSize="12" Foreground="#4B5563" Margin="0,0,0,4" />
+            <TextBox Text="{Binding UdpDiscoveryPort, Mode=OneWay}"
+                     IsReadOnly="True"
+                     Style="{StaticResource RdTextBox}"
+                     Foreground="#9CA3AF" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+            <Button Content="Apply"
+                    Click="OnSaveClicked"
+                    Style="{StaticResource RdPrimaryButton}" />
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,345 @@
+<!-- c:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Server\Views\MainWindow.xaml -->
+<Window x:Class="ExamMonitor.Server.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="U-Monitor"
+        Width="1280"
+        Height="780"
+        MinWidth="960"
+        MinHeight="600"
+        WindowStartupLocation="CenterScreen"
+        Background="#FFFFFF"
+        Foreground="#1F2937"
+        FontFamily="Segoe UI">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="28" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="1" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- LEFT SIDEBAR: RustDesk Style Server Identity & Global Actions -->
+        <Border Grid.Row="0" Grid.Column="0" Background="#F5F6F8" Padding="20,22,20,18">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="Proctor Server"
+                               FontSize="16"
+                               FontWeight="SemiBold"
+                               Foreground="#111827" />
+                    <TextBlock Text="Classroom LAN screen monitor &amp; remote control host."
+                               FontSize="11.5"
+                               Foreground="#6B7280"
+                               TextWrapping="Wrap"
+                               Margin="0,4,0,18" />
+
+                    <TextBlock Text="Server Endpoint"
+                               FontSize="11.5"
+                               FontWeight="SemiBold"
+                               Foreground="#6B7280" />
+                    <Border Background="#FFFFFF"
+                            BorderBrush="#E4E7ED"
+                            BorderThickness="1"
+                            CornerRadius="4"
+                            Padding="10,8"
+                            Margin="0,4,0,16">
+                        <StackPanel>
+                            <TextBlock Text="{Binding Settings.RoomName, Mode=OneWay}"
+                                       FontSize="15"
+                                       FontWeight="Bold"
+                                       FontFamily="Consolas, Segoe UI"
+                                       Foreground="#111827" />
+                            <TextBlock Text="TCP :45455  •  UDP :45454"
+                                       FontSize="11"
+                                       Foreground="#0071FF"
+                                       FontWeight="SemiBold"
+                                       Margin="0,3,0,0" />
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Telemetry Summary Box -->
+                    <Border Background="#FFFFFF"
+                            BorderBrush="#E4E7ED"
+                            BorderThickness="1"
+                            CornerRadius="4"
+                            Padding="12,10"
+                            Margin="0,0,0,18">
+                        <StackPanel>
+                            <Grid Margin="0,0,0,8">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Online Peers" FontSize="12" Foreground="#4B5563" />
+                                <TextBlock Grid.Column="1"
+                                           Text="{Binding TotalConnectedCount, Mode=OneWay}"
+                                           FontSize="13"
+                                           FontWeight="Bold"
+                                           Foreground="#10B981" />
+                            </Grid>
+                            <Border Background="#F3F4F6" Height="1" Margin="0,0,0,8" />
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Text="Flagged Alerts" FontSize="12" Foreground="#4B5563" />
+                                <TextBlock Grid.Column="1"
+                                           Text="{Binding AlertCount, Mode=OneWay}"
+                                           FontSize="13"
+                                           FontWeight="Bold"
+                                           Foreground="#EF4444" />
+                            </Grid>
+                        </StackPanel>
+                    </Border>
+
+                    <!-- Classroom Lock Actions -->
+                    <TextBlock Text="Classroom Control"
+                               FontSize="11.5"
+                               FontWeight="SemiBold"
+                               Foreground="#6B7280"
+                               Margin="0,0,0,6" />
+                    <Button Content="Lock All Screens"
+                            Command="{Binding LockAllCommand}"
+                            Style="{StaticResource RdSecondaryButton}"
+                            HorizontalAlignment="Stretch"
+                            Margin="0,0,0,6" />
+                    <Button Content="Unlock All Screens"
+                            Command="{Binding UnlockAllCommand}"
+                            Style="{StaticResource RdSecondaryButton}"
+                            HorizontalAlignment="Stretch"
+                            Margin="0,0,0,16" />
+
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="56" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="Grid Columns (1-8)"
+                                   FontSize="12"
+                                   Foreground="#4B5563"
+                                   VerticalAlignment="Center" />
+                        <TextBox Grid.Column="1"
+                                 Text="{Binding GridColumns, UpdateSourceTrigger=PropertyChanged}"
+                                 TextAlignment="Center"
+                                 Style="{StaticResource RdTextBox}" />
+                    </Grid>
+                </StackPanel>
+
+                <StackPanel Grid.Row="2">
+                    <Button Content="Settings"
+                            Click="OnOpenSettingsClicked"
+                            Style="{StaticResource RdSecondaryButton}"
+                            HorizontalAlignment="Stretch" />
+                </StackPanel>
+            </Grid>
+        </Border>
+
+        <!-- Vertical 1px Divider -->
+        <Border Grid.Row="0" Grid.Column="1" Background="#E4E7ED" />
+
+        <!-- RIGHT MAIN AREA: RustDesk Peer Wall & Broadcast Bar -->
+        <Grid Grid.Row="0" Grid.Column="2" Margin="24,20,24,14">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Top Broadcast Bar (RustDesk Top Input Style) -->
+            <Grid Grid.Row="0" Margin="0,0,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <TextBox Grid.Column="0"
+                         Text="{Binding BroadcastMessageText, UpdateSourceTrigger=PropertyChanged}"
+                         Style="{StaticResource RdTextBox}"
+                         Padding="10,7" />
+                <Button Grid.Column="2"
+                        Content="Send Broadcast Message"
+                        Command="{Binding BroadcastMessageCommand}"
+                        Style="{StaticResource RdPrimaryButton}" />
+            </Grid>
+
+            <!-- RustDesk Tab Header -->
+            <Border Grid.Row="1" BorderBrush="#E5E7EB" BorderThickness="0,0,0,1" Margin="0,0,0,12">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0" Orientation="Horizontal">
+                        <Border BorderBrush="#0071FF" BorderThickness="0,0,0,2" Padding="2,0,2,8" Margin="0,0,22,0">
+                            <TextBlock Text="Connected Desktops"
+                                       FontSize="13"
+                                       FontWeight="SemiBold"
+                                       Foreground="#0071FF" />
+                        </Border>
+                        <Border Padding="2,0,2,8">
+                            <TextBlock Text="LAN Auto-Discovery"
+                                       FontSize="13"
+                                       Foreground="#6B7280" />
+                        </Border>
+                    </StackPanel>
+                    <TextBlock Grid.Column="2"
+                               Text="Double-click any desktop or click Connect for HD Remote Control"
+                               FontSize="11.5"
+                               Foreground="#9CA3AF"
+                               VerticalAlignment="Center" />
+                </Grid>
+            </Border>
+
+            <!-- Peer Grid -->
+            <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+                <ItemsControl ItemsSource="{Binding Students}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="{Binding GridColumns}" VerticalAlignment="Top" />
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <!-- RustDesk Peer Tile -->
+                            <Border Background="#FFFFFF"
+                                    BorderBrush="#E4E7ED"
+                                    BorderThickness="1"
+                                    CornerRadius="4"
+                                    Margin="0,0,12,12"
+                                    MouseLeftButtonDown="OnStudentCardMouseDown">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="165" />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+
+                                    <!-- 16:9 Remote Screen Thumbnail -->
+                                    <Border Grid.Row="0" Background="#111827" CornerRadius="3,3,0,0" ClipToBounds="True">
+                                        <Grid>
+                                            <Image Source="{Binding ThumbnailFrame}"
+                                                   Stretch="Uniform"
+                                                   RenderOptions.BitmapScalingMode="LowQuality" />
+
+                                            <!-- Top-right Status Pill -->
+                                            <Border HorizontalAlignment="Right"
+                                                    VerticalAlignment="Top"
+                                                    Background="#CC111827"
+                                                    CornerRadius="3"
+                                                    Padding="6,2"
+                                                    Margin="6">
+                                                <TextBlock Text="{Binding StatusBadgeText}"
+                                                           FontSize="9.5"
+                                                           FontWeight="SemiBold"
+                                                           Foreground="#FFFFFF" />
+                                            </Border>
+                                        </Grid>
+                                    </Border>
+
+                                    <!-- Peer Info Footer -->
+                                    <Border Grid.Row="1" Padding="10,8" BorderBrush="#F3F4F6" BorderThickness="0,1,0,0">
+                                        <Grid>
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" />
+                                                <RowDefinition Height="Auto" />
+                                            </Grid.RowDefinitions>
+
+                                            <Grid Grid.Row="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*" />
+                                                    <ColumnDefinition Width="Auto" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0"
+                                                           FontSize="12.5"
+                                                           FontWeight="SemiBold"
+                                                           Foreground="#111827"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           VerticalAlignment="Center">
+                                                    <Run Text="{Binding StudentName}" />
+                                                    <Run Text=" (" Foreground="#6B7280" /><Run Text="{Binding StudentId}" Foreground="#6B7280" /><Run Text=")" Foreground="#6B7280" />
+                                                </TextBlock>
+                                                <Button Grid.Column="1"
+                                                        Content="Connect"
+                                                        Tag="{Binding}"
+                                                        Click="OnInspectStudentClicked"
+                                                        Style="{StaticResource RdPrimaryButton}"
+                                                        FontSize="11"
+                                                        Padding="10,3"
+                                                        Margin="6,0,0,0" />
+                                            </Grid>
+
+                                            <Grid Grid.Row="1" Margin="0,4,0,0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto" />
+                                                    <ColumnDefinition Width="*" />
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Grid.Column="0"
+                                                           FontSize="11"
+                                                           FontFamily="Consolas, Segoe UI"
+                                                           Foreground="#6B7280">
+                                                    <Run Text="{Binding MachineName}" />
+                                                    <Run Text=" • " />
+                                                    <Run Text="{Binding IpAddress}" />
+                                                </TextBlock>
+                                                <TextBlock Grid.Column="1"
+                                                           Text="{Binding ActiveWindowTitle}"
+                                                           FontSize="11"
+                                                           Foreground="#0071FF"
+                                                           TextTrimming="CharacterEllipsis"
+                                                           HorizontalAlignment="Right"
+                                                           Margin="8,0,0,0" />
+                                            </Grid>
+                                        </Grid>
+                                    </Border>
+                                </Grid>
+                            </Border>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+            </ScrollViewer>
+        </Grid>
+
+        <!-- BOTTOM BAR: RustDesk Status Bar -->
+        <Border Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                Background="#F9FAFB"
+                BorderBrush="#E4E7ED"
+                BorderThickness="0,1,0,0"
+                Padding="12,0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Ellipse Grid.Column="0"
+                         Width="8"
+                         Height="8"
+                         Fill="#10B981"
+                         VerticalAlignment="Center"
+                         Margin="0,0,8,0" />
+                <TextBlock Grid.Column="1"
+                           Text="{Binding ServerStatusText, Mode=OneWay}"
+                           FontSize="11.5"
+                           Foreground="#4B5563"
+                           VerticalAlignment="Center" />
+                <TextBlock Grid.Column="2"
+                           Text="U-Monitor Server v1.0"
+                           FontSize="11"
+                           Foreground="#9CA3AF"
+                           VerticalAlignment="Center" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

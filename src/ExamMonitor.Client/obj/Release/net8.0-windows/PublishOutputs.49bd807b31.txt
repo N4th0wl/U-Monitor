@@ -1,0 +1,7 @@
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\publish\Client\ExamMonitor.Client.exe
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\publish\Client\ExamMonitor.Client.dll
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\publish\Client\ExamMonitor.Client.deps.json
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\publish\Client\ExamMonitor.Client.runtimeconfig.json
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\publish\Client\ExamMonitor.Client.pdb
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\publish\Client\ExamMonitor.Common.dll
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\publish\Client\ExamMonitor.Common.pdb

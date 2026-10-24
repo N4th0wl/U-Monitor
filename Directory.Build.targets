@@ -1,0 +1,15 @@
+<!-- c:\Users\ivand\Documents\Coding\Project\U-Monitor\Directory.Build.targets -->
+<Project>
+  <ItemGroup Condition="!Exists('$(NetCoreTargetingPackRoot)\Microsoft.NETCore.App.Ref\8.0.30')">
+    <KnownFrameworkReference Update="@(KnownFrameworkReference)"
+                              DefaultRuntimeFrameworkVersion="10.0.0"
+                              LatestRuntimeFrameworkVersion="10.0.11"
+                              TargetingPackVersion="10.0.11" />
+    <KnownAppHostPack Update="@(KnownAppHostPack)"
+                       AppHostPackVersion="10.0.11" />
+  </ItemGroup>
+
+  <Target Name="VSTest" DependsOnTargets="Build" Condition="'$(IsTestProject)' == 'true'">
+    <Exec Command="&quot;$(DOTNET_HOST_PATH)&quot; exec &quot;$(TargetPath)&quot;" />
+  </Target>
+</Project>

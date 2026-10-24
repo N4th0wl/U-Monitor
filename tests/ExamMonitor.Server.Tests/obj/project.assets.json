@@ -1,0 +1,150 @@
+{
+  "version": 4,
+  "targets": {
+    "net8.0-windows": {
+      "ExamMonitor.Client/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ExamMonitor.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ExamMonitor.Client.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExamMonitor.Client.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "ExamMonitor.Common/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/ExamMonitor.Common.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExamMonitor.Common.dll": {}
+        }
+      },
+      "ExamMonitor.Server/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "ExamMonitor.Common": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ExamMonitor.Server.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ExamMonitor.Server.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      }
+    }
+  },
+  "libraries": {
+    "ExamMonitor.Client/1.0.0": {
+      "type": "project",
+      "path": "../../src/ExamMonitor.Client/ExamMonitor.Client.csproj",
+      "msbuildProject": "../../src/ExamMonitor.Client/ExamMonitor.Client.csproj"
+    },
+    "ExamMonitor.Common/1.0.0": {
+      "type": "project",
+      "path": "../../src/ExamMonitor.Common/ExamMonitor.Common.csproj",
+      "msbuildProject": "../../src/ExamMonitor.Common/ExamMonitor.Common.csproj"
+    },
+    "ExamMonitor.Server/1.0.0": {
+      "type": "project",
+      "path": "../../src/ExamMonitor.Server/ExamMonitor.Server.csproj",
+      "msbuildProject": "../../src/ExamMonitor.Server/ExamMonitor.Server.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows": [
+      "ExamMonitor.Client >= 1.0.0",
+      "ExamMonitor.Common >= 1.0.0",
+      "ExamMonitor.Server >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\.nuget\\packages": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\tests\\ExamMonitor.Server.Tests\\ExamMonitor.Server.Tests.csproj",
+      "projectName": "ExamMonitor.Server.Tests",
+      "projectPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\tests\\ExamMonitor.Server.Tests\\ExamMonitor.Server.Tests.csproj",
+      "packagesPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\.nuget\\packages",
+      "outputPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\tests\\ExamMonitor.Server.Tests\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\ivand\\AppData\\Roaming\\NuGet\\NuGet.Config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files\\dotnet\\packs": {}
+      },
+      "frameworks": {
+        "net8.0-windows": {
+          "framework": "net8.0-windows7.0",
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {
+            "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Client\\ExamMonitor.Client.csproj": {
+              "projectPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Client\\ExamMonitor.Client.csproj"
+            },
+            "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Common\\ExamMonitor.Common.csproj": {
+              "projectPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Common\\ExamMonitor.Common.csproj"
+            },
+            "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Server\\ExamMonitor.Server.csproj": {
+              "projectPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Server\\ExamMonitor.Server.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "false",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.400"
+    },
+    "frameworks": {
+      "net8.0-windows": {
+        "framework": "net8.0-windows7.0",
+        "targetAlias": "net8.0-windows",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\bin\Release\net8.0\ExamMonitor.Common.deps.json
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\bin\Release\net8.0\ExamMonitor.Common.dll
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\bin\Release\net8.0\ExamMonitor.Common.pdb
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\obj\Release\net8.0\ExamMonitor.Common.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\obj\Release\net8.0\ExamMonitor.Common.AssemblyInfoInputs.cache
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\obj\Release\net8.0\ExamMonitor.Common.AssemblyInfo.cs
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\obj\Release\net8.0\ExamMonitor.Common.csproj.CoreCompileInputs.cache
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\obj\Release\net8.0\ExamMonitor.Common.dll
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\obj\Release\net8.0\refint\ExamMonitor.Common.dll
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\obj\Release\net8.0\ExamMonitor.Common.pdb
+C:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Common\obj\Release\net8.0\ref\ExamMonitor.Common.dll

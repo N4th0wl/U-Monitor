@@ -1,0 +1,17 @@
+<!-- c:\Users\ivand\Documents\Coding\Project\U-Monitor\tests\ExamMonitor.Server.Tests\ExamMonitor.Server.Tests.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <IsTestProject>true</IsTestProject>
+    <RootNamespace>ExamMonitor.Server.Tests</RootNamespace>
+    <AssemblyName>ExamMonitor.Server.Tests</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\ExamMonitor.Common\ExamMonitor.Common.csproj" />
+    <ProjectReference Include="..\..\src\ExamMonitor.Server\ExamMonitor.Server.csproj" />
+    <ProjectReference Include="..\..\src\ExamMonitor.Client\ExamMonitor.Client.csproj" />
+  </ItemGroup>
+</Project>

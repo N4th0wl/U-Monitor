@@ -1,0 +1,137 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Client\\ExamMonitor.Client.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Client\\ExamMonitor.Client.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Client\\ExamMonitor.Client.csproj",
+        "projectName": "ExamMonitor.Client",
+        "projectPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Client\\ExamMonitor.Client.csproj",
+        "packagesPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\.nuget\\packages",
+        "outputPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Client\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ivand\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\packs": {}
+        },
+        "frameworks": {
+          "net8.0-windows": {
+            "framework": "net8.0-windows7.0",
+            "targetAlias": "net8.0-windows",
+            "projectReferences": {
+              "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Common\\ExamMonitor.Common.csproj": {
+                "projectPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Common\\ExamMonitor.Common.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "false",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.400"
+      },
+      "frameworks": {
+        "net8.0-windows": {
+          "framework": "net8.0-windows7.0",
+          "targetAlias": "net8.0-windows",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Common\\ExamMonitor.Common.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Common\\ExamMonitor.Common.csproj",
+        "projectName": "ExamMonitor.Common",
+        "projectPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Common\\ExamMonitor.Common.csproj",
+        "packagesPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\.nuget\\packages",
+        "outputPath": "C:\\Users\\ivand\\Documents\\Coding\\Project\\U-Monitor\\src\\ExamMonitor.Common\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ivand\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files\\dotnet\\packs": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "framework": "net8.0",
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "false",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "10.0.400"
+      },
+      "frameworks": {
+        "net8.0": {
+          "framework": "net8.0",
+          "targetAlias": "net8.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.400/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

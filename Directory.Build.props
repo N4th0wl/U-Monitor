@@ -1,0 +1,13 @@
+<!-- c:\Users\ivand\Documents\Coding\Project\U-Monitor\Directory.Build.props -->
+<Project>
+  <PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <NuGetAudit>false</NuGetAudit>
+    <UseSharedCompilation>false</UseSharedCompilation>
+    <RestorePackagesPath>$(MSBuildThisFileDirectory).nuget\packages</RestorePackagesPath>
+    <RestoreSources Condition="!Exists('C:\Program Files\dotnet\packs\Microsoft.NETCore.App.Ref\8.0.30')">C:\Program Files\dotnet\packs</RestoreSources>
+  </PropertyGroup>
+</Project>

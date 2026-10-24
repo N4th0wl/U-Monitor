@@ -1,0 +1,73 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "ExamMonitor.Server.Tests/1.0.0": {
+        "dependencies": {
+          "ExamMonitor.Client": "1.0.0",
+          "ExamMonitor.Common": "1.0.0",
+          "ExamMonitor.Server": "1.0.0"
+        },
+        "runtime": {
+          "ExamMonitor.Server.Tests.dll": {}
+        }
+      },
+      "ExamMonitor.Client/1.0.0": {
+        "dependencies": {
+          "ExamMonitor.Common": "1.0.0"
+        },
+        "runtime": {
+          "ExamMonitor.Client.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "ExamMonitor.Common/1.0.0": {
+        "runtime": {
+          "ExamMonitor.Common.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "ExamMonitor.Server/1.0.0": {
+        "dependencies": {
+          "ExamMonitor.Common": "1.0.0"
+        },
+        "runtime": {
+          "ExamMonitor.Server.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ExamMonitor.Server.Tests/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ExamMonitor.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ExamMonitor.Common/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ExamMonitor.Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

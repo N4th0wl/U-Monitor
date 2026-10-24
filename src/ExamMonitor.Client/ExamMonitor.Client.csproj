@@ -1,0 +1,14 @@
+<!-- c:\Users\ivand\Documents\Coding\Project\U-Monitor\src\ExamMonitor.Client\ExamMonitor.Client.csproj -->
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>ExamMonitor.Client</RootNamespace>
+    <AssemblyName>ExamMonitor.Client</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ExamMonitor.Common\ExamMonitor.Common.csproj" />
+  </ItemGroup>
+</Project>
